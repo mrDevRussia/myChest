@@ -1,0 +1,5 @@
+;!@Install@!UTF-8! 
+Title="JET IDE Installer" 
+BeginPrompt="Do you want to install JET IDE?" 
+ExecuteFile="JET.App\JET.exe" 
+;!@InstallEnd@! 

@@ -1,97 +1,95 @@
-# ArcSentinel Antivirus Software
+# JET — The Next-Level AI-Powered Independent IDE
 
-ArcSentinel is a comprehensive antivirus solution built with Python, offering real-time protection, file scanning, quarantine management, and system health monitoring in a modern, user-friendly interface.
+## Overview
 
-![ArcSentinel Logo](icon.svg)
+JET is a revolutionary developer experience that creates a fully independent, AI-powered IDE surpassing existing solutions like VS Code in intelligence, performance, and usability. Designed primarily for Windows, JET combines cutting-edge local AI assistance with seamless real-time collaboration, robust project management, and superior code analysis, all integrated into a native desktop application with a clean, modern, and visually stunning user interface.
 
-## Features
+## Key Features
 
-- **Real-time Protection**: Monitors file system changes to detect threats as they appear
-- **Multiple Scan Types**: Quick, Full, and Custom scanning options
-- **Threat Detection**: Uses signature-based and heuristic analysis to identify malware
-- **Quarantine Management**: Safely isolate and manage detected threats
-- **System Health Monitoring**: Track CPU, memory, and disk usage
-- **Modern UI**: Clean, intuitive interface with dark theme
-- **System Tray Integration**: Runs in the background with quick access to common functions
+- **Multi-Language Support**: Native support for a wide range of popular programming languages
+- **Superior AI Integration**: Advanced local AI models for faster, more private, and context-aware code suggestions
+- **Optimized Native Performance**: Built with C# and WPF for snappier responsiveness and lower resource consumption
+- **Full Offline Capability**: Works fully offline with all AI features embedded locally
+- **Beautiful and Intuitive UI**: Clean, elegant, and customizable interface that enhances user focus
+- **Enhanced Collaboration Tools**: Built-in live collaboration with real-time editing and communication
+- **Modular and Scalable Architecture**: Enables continuous expansion without sacrificing stability or speed
 
-## Installation
+## Technologies Used
+
+- **C# with .NET (WPF)**: Primary programming language and framework for the native Windows desktop application
+- **WPF (Windows Presentation Foundation)**: For designing a modern, customizable UI
+- **AvalonEdit**: Provides syntax highlighting, code editing, and auto-completion features
+- **Local AI Integration**: AI modules powered by lightweight local AI frameworks
+- **LibGit2Sharp**: For Git version control features
+- **SignalR**: For real-time collaboration features
+- **SQLite**: For local data storage
+
+## Project Structure
+
+```
+JET/
+├── JET.App/                  # Main application project
+│   ├── Models/               # Data models
+│   ├── ViewModels/           # MVVM view models
+│   ├── Views/                # XAML views
+│   ├── Services/             # Application services
+│   │   ├── AIService.cs      # AI integration service
+│   │   ├── GitService.cs     # Git integration service
+│   │   └── CollaborationService.cs # Real-time collaboration service
+│   ├── Resources/            # Application resources
+│   │   ├── Icons/            # Application icons
+│   │   └── Themes/           # UI themes
+│   └── Utilities/            # Helper classes and utilities
+└── JET.sln                   # Solution file
+```
+
+## Getting Started
 
 ### Prerequisites
 
-- Python 3.8 or higher
-- Required Python packages (see requirements.txt)
+- Windows 10 or later
+- .NET 6.0 SDK or later
+- Visual Studio 2022 or later (recommended for development)
 
-### Setup
+### Building the Project
 
-1. Clone or download this repository
-2. Install the required dependencies:
+1. Clone the repository
+2. Open `JET.sln` in Visual Studio
+3. Build the solution
+4. Run the application
 
-```bash
-pip install -r requirements.txt
-```
+### Packaging the Application
 
-3. Run the application:
+JET IDE includes scripts for packaging the application as a self-contained executable and creating installers:
 
-```bash
-python ArcSentinel.py
-```
+1. **Quick Packaging**: Run `build-and-package.ps1` for an interactive packaging experience
+2. **Manual Steps**:
+   - Convert SVG icon to ICO: `convert-icon.ps1` (requires ImageMagick)
+   - Create self-contained executable: `package-app.ps1`
+   - Compress executable (optional): `compress-exe.ps1` (requires UPX)
+   - Create installer: `create-installer.ps1` (requires Inno Setup) or `create-nsis-installer.ps1` (requires NSIS)
+   - Set up automatic updates: `setup-auto-updates.ps1`
 
-### Building Executable
+#### Requirements for Packaging
 
-To create a standalone executable:
+- .NET 6.0 SDK or later
+- PowerShell 5.1 or later
+- For icon conversion: ImageMagick
+- For compression: UPX
+- For installers: Inno Setup or NSIS
 
-```bash
-pyinstaller --onefile --windowed --icon=icon.ico ArcSentinel.py
-```
+## Development Roadmap
 
-## Usage
+- **Phase 1**: Core IDE functionality and UI
+- **Phase 2**: Language support and code editing features
+- **Phase 3**: Local AI integration
+- **Phase 4**: Git integration
+- **Phase 5**: Real-time collaboration
+- **Phase 6**: Performance optimization and polish
 
-### Main Dashboard
+## Contributing
 
-The dashboard provides an overview of your system's protection status, including:
-- Protection status indicators
-- Last scan information
-- Threat statistics
-- Quick access to common functions
-
-### Scanning
-
-- **Quick Scan**: Checks common locations for malware
-- **Full Scan**: Comprehensive scan of the entire system
-- **Custom Scan**: Select specific folders or files to scan
-
-### Quarantine Management
-
-The quarantine tab allows you to:
-- View quarantined files
-- Restore files that were incorrectly flagged
-- Permanently delete threats
-
-### Settings
-
-Configure ArcSentinel according to your needs:
-- Enable/disable real-time protection
-- Configure scan options (archives, heuristic analysis)
-- Set startup behavior
-- Update virus signatures
-
-## Development
-
-### Architecture
-
-ArcSentinel is built with a modular architecture:
-- **Core Engine**: Handles scanning, detection, and file operations
-- **Real-time Monitor**: Watches for file system changes
-- **UI Layer**: PyQt5-based user interface
-- **Settings Manager**: Handles configuration persistence
-
-### Adding Custom Signatures
-
-You can add custom virus signatures by modifying the `signatures.json` file in the application data directory.
-
-## Disclaimer
-
-ArcSentinel is provided as-is for educational and demonstration purposes. While it implements real antivirus techniques, it is not intended to replace commercial security solutions in production environments.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
