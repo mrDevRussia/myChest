@@ -1,0 +1,3 @@
+@echo off
+echo Starting ArcSentinel with icon and all dependencies...
+start "" "%~dp0dist\ArcSentinel_complete.exe"

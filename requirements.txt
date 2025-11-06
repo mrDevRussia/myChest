@@ -1,0 +1,9 @@
+# ArcSentinel Anti-virus Software Requirements
+PyQt5==5.15.9
+psutil==5.9.5
+yara-python==4.3.1
+pefile==2023.2.7
+PyInstaller==6.15.0
+requests==2.31.0
+chardet==5.2.0
+numpy==1.24.3
